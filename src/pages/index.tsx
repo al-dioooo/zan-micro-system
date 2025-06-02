@@ -1,4 +1,5 @@
 import ZMSGraphic from "@/components/graphics/zms"
+import { ArrowNarrowDown, LayersIntersect, Sparkles, Star } from "@/components/icons/outline"
 
 export default function Home() {
     return (
@@ -28,6 +29,15 @@ export default function Home() {
                         <ZMSGraphic className="w-lg h-auto" />
                     </div>
                 </div>
+
+                <div className="relative">
+                    {/* Decoration */}
+                    <div className="absolute inset-x-0 pointer-events-none flex justify-center">
+                        <div className="rounded-full border border-gray-200 p-2">
+                            <ArrowNarrowDown strokeWidth={1.5} className="w-12 h-12 text-blue-500" />
+                        </div>
+                    </div>
+                </div>
             </section>
 
             <section className="flex items-center p-24 justify-between">
@@ -45,41 +55,48 @@ export default function Home() {
             <section className="flex flex-col items-center p-24 space-y-16">
                 <h5 className="text-4xl font-semibold text-blue-500">Kenapa Memilih ZMS?</h5>
 
-                <div className="flex space-x-16">
+                <div className="grid grid-cols-3 gap-16">
                     <div className="space-y-2">
-                        <p className="text-xl font-semibold">
-                            Kemudahan
-                        </p>
-                        <p className="text-gray-500 text-justify">
-                            Kami mengemas kompleksitas pencatatan dan penyusunan laporan keuangan menjadi sesuatu yang
-                            sederhana
-                            dan mudah, tanpa mengurangi kelengkapan, akurasi dan keamanan.
-                            Kami membantu orang awam berbuat layaknya tenaga ahli, serta memungkinkan pekerjaan seorang ahli
-                            menjadi sangat mudah. Anda tinggal membuat nota, dan semua laporan keuangan tersedia seketika.
+                        <div className="flex items-center space-x-4">
+                            <div className="p-2 rounded-full bg-gradient-to-tl from-blue-500 to-blue-300 text-white">
+                                <Sparkles strokeWidth={1.5} className="w-8 h-8" />
+                            </div>
+                            <p className="text-xl font-semibold">
+                                Easy-to-use
+                            </p>
+                        </div>
+                        <p className="text-gray-500 text-justify font-medium indent-16">
+                            Kompleksitas pencatatan dan penyusunan laporan keuangan dikemas menjadi sesuatu yang sederhana dan mudah tanpa mengurangi kelengkapan, akurasi, dan keamanan.
                         </p>
                     </div>
 
                     <div className="space-y-2">
-                        <p className="text-xl font-semibold">
-                            Fleksibilitas
-                        </p>
-                        <p className="text-gray-500 text-justify">
-                            Sistem kami dirancang sedemikian rupa sehingga dapat diterapkan dalam berbagai jenis usaha
-                            (dagang, jasa, persewaan dan manufaktur) serta berbagai bentuk usaha (perseorangan, persekutuan,
-                            perseroan), juga berbagai skala bisnis (mikro, kecil, menengah, besar, multinasional).
+                        <div className="flex items-center space-x-4">
+                            <div className="p-2 rounded-full bg-gradient-to-tl from-green-500 to-green-300 text-white">
+                                <LayersIntersect strokeWidth={1.5} className="w-8 h-8" />
+                            </div>
+                            <p className="text-xl font-semibold">
+                                Flexible
+                            </p>
+                        </div>
+                        <p className="text-gray-500 text-justify font-medium indent-16">
+                            Sistem kami dirancang untuk dapat diterapkan dalam berbagai jenis dan bentuk usaha, serta berbagai skala bisnis.
 
-                            Sistem kami juga dapat menangani data lintas cabang, lintas perusahaan dan lintas periode.
+                            Serta dapat menangani data lintas cabang, lintas perusahaan dan lintas periode.
                         </p>
                     </div>
 
                     <div className="space-y-2">
-                        <p className="text-xl font-semibold">
-                            Keandalan
-                        </p>
-                        <p className="text-gray-500 text-justify">
-                            Aplikasi kami didukung oleh Object-Relational Database Management System (ORDBMS) yaitu sistem
-                            database modern yang handal dengan skalabilitas serta konkurensi yang tinggi, sehingga menjamin
-                            konsistensi dan integritas data secara handal dan terpercaya.
+                        <div className="flex items-center space-x-4">
+                            <div className="p-2 rounded-full bg-gradient-to-tl from-yellow-500 to-yellow-300 text-white">
+                                <Star strokeWidth={1.5} className="w-8 h-8" />
+                            </div>
+                            <p className="text-xl font-semibold">
+                                Reliable
+                            </p>
+                        </div>
+                        <p className="text-gray-500 text-justify font-medium indent-16">
+                            Aplikasi kami menggunakan sistem database modern yang handal dengan skalabilitas serta konkurensi tinggi yang dapat menjamin konsistensi dan integritas data secara handal dan terpercaya.
                         </p>
                     </div>
                 </div>

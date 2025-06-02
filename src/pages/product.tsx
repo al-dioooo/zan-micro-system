@@ -53,7 +53,7 @@ export default function Product() {
                 </div>
             </section>
 
-            <section className="m-24 p-24 border border-dashed border-gray-300 aspect-cinema flex items-center justify-center">
+            <section className="m-24 p-24 border border-dashed border-gray-300 rounded-[4rem] aspect-cinema flex items-center justify-center">
                 <div className="bg-gradient-to-tl from-blue-500 to-blue-300 text-white rounded-3xl px-24 py-8">
                     <p className="text-4xl font-medium">Pesan Sekarang</p>
                 </div>
