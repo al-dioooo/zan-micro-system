@@ -1,37 +1,9 @@
-import { hover, motion, scale } from "motion/react"
-import Image from "next/image"
+import AxiosInstance from "@/helpers/axiosInstance"
+import { motion } from "motion/react"
 import Link from "next/link"
-import { tap } from "node:test/reporters"
-
-const productData = [
-    {
-        id: 1,
-        name: "Fastbook Desktop",
-        slug: "fastbook-desktop",
-        description: "",
-        price: 123,
-        payment_type: "one-time",
-        cover: "img/fastbook-desktop-cover.png",
-    },
-    {
-        id: 2,
-        name: "Fastbook Online",
-        slug: "fastbook-online",
-        description: "",
-        price: 123,
-        payment_type: "subscription",
-        cover: "img/fastbook-online-cover.png",
-    },
-    {
-        id: 3,
-        name: "Zi-SMS Pro",
-        slug: "zi-sms-pro",
-        description: "",
-        price: 123,
-        payment_type: "one-time",
-        cover: "img/zi-sms-pro-cover.png",
-    }
-]
+import { useEffect, useState } from "react"
+import { ProductDataType } from "@/helpers/types"
+import WavyText from "@/components/wavy-text"
 
 const productAnimationVariants = {
     hover: {
@@ -45,6 +17,12 @@ const productAnimationVariants = {
 const MotionLink = motion(Link)
 
 export default function Product() {
+    const [productDataList, setProductDataList] = useState([])
+
+    useEffect(() => {
+        AxiosInstance.get("/api/product").then((response) => setProductDataList(response.data)).catch((error) => console.log(error))
+    }, [])
+
     return (
         <>
             <section className="px-24 pt-36 pb-12">
@@ -57,30 +35,22 @@ export default function Product() {
             <section className="px-24 py-16 space-y-8">
                 <h3 className="text-xl font-medium">Produk Umum</h3>
                 <div className="grid grid-cols-3 gap-8">
-                    {productData.map((row) => (
+                    {productDataList.map((row: ProductDataType) => (
                         <MotionLink variants={productAnimationVariants} href={`/product/${row.slug}`} className="space-y-2">
-                            <motion.img variants={productAnimationVariants} whileHover="hover" whileTap="tap" transition={{ type: "spring", visualDuration: .3 }} className="w-full aspect-video rounded-3xl" src={row.cover} alt={`${row.name} Cover`} />
+                            <motion.img variants={productAnimationVariants} whileHover="hover" whileTap="tap" transition={{ type: "spring", visualDuration: .3 }} className="w-full aspect-video rounded-3xl" src={`/${row.coverImage}`} alt={`${row.name} Cover`} />
                             <div className="px-6 flex items-center justify-between">
                                 <p className="font-medium">{row.name}</p>
-                                <p className="font-medium text-gray-500 capitalize">{row.payment_type.replace('-', ' ')}</p>
+                                <p className="font-medium text-gray-500 capitalize">{row.paymentType.replace('-', ' ')}</p>
                             </div>
                         </MotionLink>
                     ))}
                 </div>
             </section>
 
-            <section className="px-24 py-16 space-y-8">
-                <h3 className="text-xl font-medium">Produk Khusus</h3>
-                {/* <div className="grid grid-cols-3 gap-8">
-                    {productData.map((row) => (
-                        <Link href={`/product/${row.slug}`} className="space-y-2">
-                            <img className="w-full aspect-video rounded-3xl" src={row.cover} alt={`${row.name} Cover`} />
-                            <div className="px-6">
-                                <p className="font-medium">{row.name}</p>
-                            </div>
-                        </Link>
-                    ))}
-                </div> */}
+            <section className="px-24 py-16">
+                <div className="text-4xl font-medium">
+                    <WavyText />
+                </div>
             </section>
 
             <section className="m-24 p-24 border border-dashed border-gray-300 aspect-cinema flex items-center justify-center">

@@ -3,7 +3,7 @@ import NavLink from "../nav-link"
 
 export default function Navbar() {
     return (
-        <header className="fixed top-0 w-full">
+        <header className="fixed top-0 w-full z-10">
             <div
                 className="relative flex items-center justify-between px-24 py-4 bg-white/50 backdrop-blur border-b border-gray-100">
                 <div className="uppercase flex flex-col">

@@ -5,7 +5,8 @@ const nextConfig: NextConfig = {
     reactStrictMode: true,
     env: {
         APP_NAME: process.env.APP_NAME,
-        BACKEND_API_URL: process.env.BACKEND_API_URL
+        BASE_URL: process.env.BASE_URL,
+        DATABASE_URL: process.env.DATABASE_URL,
     }
 }
 
