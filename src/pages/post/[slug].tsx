@@ -19,12 +19,16 @@ export default function PostDetail() {
         }
     }, [router.query.slug])
 
+    const copyCurrentUrl = () => {
+        navigator.clipboard.writeText(window.location.toString())
+    }
+
     return (
         <section className="px-12 md:px-24 pt-36 pb-12">
             <div className="space-y-16">
                 <div className="space-y-4 md:space-y-8 w-full md:w-1/2">
                     <div className="space-y-2">
-                        <p>{postData ? formatDate(postData.created_at) : ""}</p>
+                        <p className="text-gray-500 font-medium">{postData ? formatDate(postData.created_at) : ""}</p>
                         <h1 className="bg-clip-text bg-gradient-to-br from-blue-500 to-blue-300 text-transparent text-3xl font-semibold">{postData?.title}</h1>
                         <h2 className="max-w-md w-full text-gray-700">{postData?.description}</h2>
                     </div>
@@ -45,10 +49,10 @@ export default function PostDetail() {
 
                     <div className="w-fit md:w-1/3">
                         <div className="flex items-center space-x-4">
-                            <a href="" className="inline-flex space-x-2 font-medium bg-gradient-to-tl from-blue-500 to-blue-300 px-6 py-2 rounded-full text-white items-center">
+                            <button onClick={() => copyCurrentUrl()} className="inline-flex z-10 space-x-2 font-medium bg-gradient-to-tl from-blue-500 to-blue-300 hover:bg-blue-500 hover:active:bg-blue-300 transition px-6 py-2 rounded-full text-white items-center pointer-events-auto">
                                 <Link />
                                 <span>Copy Link</span>
-                            </a>
+                            </button>
                         </div>
                     </div>
                 </div>

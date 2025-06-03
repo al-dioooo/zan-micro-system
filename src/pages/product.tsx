@@ -61,9 +61,9 @@ export default function Product() {
 
             <section className="bg-white rounded-b-[4rem] border-b-[12px] border-b-blue-100 p-12 md:p-24">
                 <div className="p-12 md:p-24 border border-dashed border-gray-300 rounded-4xl md:rounded-[4rem] aspect-cinema flex items-center justify-center">
-                    <div className="bg-gradient-to-tl from-blue-500 to-blue-300 text-white rounded-3xl px-8 md:px-24 py-8">
-                        <p className="text-lg md:text-4xl font-medium">Pesan Sekarang</p>
-                    </div>
+                    <a href="https://wa.me/6285212482977" target="_blank" className="bg-gradient-to-tl from-blue-500 to-blue-300 text-white rounded-3xl px-8 md:px-24 py-8">
+                        <span className="text-lg md:text-4xl font-medium">Pesan Sekarang</span>
+                    </a>
                 </div>
             </section>
         </>

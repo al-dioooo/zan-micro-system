@@ -1,3 +1,6 @@
+import Link from "next/link";
+import { WhatsApp, Mail, Phone } from "@/components/icons/outline"
+
 export default function Footer() {
     return (
         <footer className="bg-radial-[at_50%_100%] from-blue-100 via-gray-100 via-60% to-gray-100 px-12 md:px-24 pt-16 pb-36 relative overflow-hidden">
@@ -15,28 +18,15 @@ export default function Footer() {
                             </p>
                         </div>
                         <div className="flex items-center space-x-6">
-                            <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M4 8a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z" />
-                                <path d="M9 12a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" />
-                                <path d="M16.5 7.5v.01" />
-                            </svg>
-                            <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
-                            </svg>
-                            <svg className="w-6 h-6" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
-                                <path
-                                    d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
-                            </svg>
+                            <a className="hover:text-blue-500" href="https://wa.me/6285212482977" target="_blank">
+                                <WhatsApp />
+                            </a>
+                            <a className="hover:text-blue-500" href="tel:6285212482977" target="_blank">
+                                <Phone />
+                            </a>
+                            <a className="hover:text-blue-500" href="mailto:ptzanms@gmail.com" target="_blank">
+                                <Mail />
+                            </a>
                         </div>
                     </div>
 
@@ -50,16 +40,16 @@ export default function Footer() {
                     <p className="font-medium uppercase tracking-widest text-blue-500">Links</p>
                     <ul className="space-y-4">
                         <li>
-                            <a href="">Home</a>
+                            <Link className="hover:text-blue-500" href="/">Home</Link>
                         </li>
                         <li>
-                            <a href="">Product</a>
+                            <Link className="hover:text-blue-500" href="/product">Product</Link>
                         </li>
                         <li>
-                            <a href="">Blog</a>
+                            <Link className="hover:text-blue-500" href="/blog">Blog</Link>
                         </li>
                         <li>
-                            <a href="">Contact</a>
+                            <Link className="hover:text-blue-500" href="/contact">Contact</Link>
                         </li>
                     </ul>
                 </div>
