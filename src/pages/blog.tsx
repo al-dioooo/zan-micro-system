@@ -27,7 +27,7 @@ export default function Blog() {
 
     return (
         <>
-            <section className="px-24 pt-36 pb-12 relative bg-white">
+            <section className="px-12 md:px-24 pt-36 pb-12 relative bg-white">
                 <div className="space-y-2">
                     <h1 className="text-3xl font-semibold">Blog</h1>
                 </div>
@@ -38,8 +38,8 @@ export default function Blog() {
                 </div>
             </section>
 
-            <section className="px-24 py-16 bg-white rounded-b-[4rem] border-b-[12px] border-b-blue-100">
-                <div className="grid grid-cols-3 gap-8">
+            <section className="px-12 md:px-24 py-16 bg-white rounded-b-[4rem] border-b-[12px] border-b-blue-100">
+                <div className="grid md:grid-cols-3 gap-8">
                     {postDataList.map((row: PostDataType) => (
                         <MotionLink key={row.id} variants={postAnimationVariants} href={`/post/${row.slug}`} className="space-y-4 border border-gray-200 p-8 rounded-3xl">
                             <div className="flex items-center justify-between">

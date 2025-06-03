@@ -28,10 +28,10 @@ export default function Home() {
 
     return (
         <>
-            <section className="flex flex-col space-y-4 justify-center min-h-screen bg-white p-36">
-                <div className="flex justify-between items-center">
+            <section className="flex flex-col space-y-4 justify-center min-h-screen bg-white p-8 md:p-36">
+                <div className="flex md:flex-row flex-col-reverse justify-between items-center">
                     <div className="relative">
-                        <h1 className="text-6xl font-semibold leading-tight relative z-[1]">
+                        <h1 className="text-3xl md:text-6xl font-semibold leading-tight relative z-[1]">
                             <p>
                                 Solusi Digital
                             </p>
@@ -40,7 +40,7 @@ export default function Home() {
                                     className="text-blue-500 underline underline-offset-8 decoration-blue-200">Terintegrasi</span>
                             </p>
                         </h1>
-                        <h2 className="text-xl text-gray-500 mt-4 max-w-md relative z-[1]">
+                        <h2 className="md:text-xl text-gray-500 mt-4 max-w-md relative z-[1]">
                             Untuk Meningkatkan Produktivitas dan Efisiensi Bisnis Anda
                         </h2>
 
@@ -57,8 +57,8 @@ export default function Home() {
                             <div className="-translate-x-32 -translate-y-32 rounded-full aspect-square bg-indigo-100 blur-3xl"></div>
                         </div>
                     </div>
-                    <div className="relative flex items-center w-full max-w-lg aspect-square">
-                        <ZMSGraphic className="w-lg h-auto" />
+                    <div className="relative flex items-center justify-center w-full max-w-lg aspect-square">
+                        <ZMSGraphic className="w-[18rem] md:w-lg h-auto" />
 
                         {/* Decoration */}
                         <div className="absolute pointer-events-none -top-1 -right-1 text-indigo-100">
@@ -77,14 +77,14 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="bg-white p-12">
-                <div className="flex overflow-hidden items-center p-12 rounded-4xl border-4 border-blue-50 justify-between bg-gradient-to-tr from-blue-200 via-blue-50 to-blue-50 relative">
+            <section className="bg-white p-6 md:p-12">
+                <div className="flex flex-col space-y-8 md:space-y-0 md:flex-row overflow-hidden items-center p-6 md:p-12 rounded-4xl border-4 border-blue-50 justify-between bg-gradient-to-tr from-blue-200 via-blue-50 to-blue-50 relative">
                     <h3 className="text-4xl font-semibold text-blue-500">
                         <p>Zan</p>
                         <p className="pl-3">Micro</p>
                         <p className="pl-6">System</p>
                     </h3>
-                    <h4 className="max-w-3xl text-justify text-lg">
+                    <h4 className="max-w-3xl text-justify md:text-lg">
                         Penyedia jasa pengembangan aplikasi berbasis web custom, membantu berbagai
                         sektor bisnis dalam mengoptimalkan sistem operasional mereka.
                     </h4>
@@ -96,10 +96,10 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="flex flex-col items-center p-24 space-y-16 bg-white">
+            <section className="flex flex-col items-center p-8 md:p-24 space-y-16 bg-white">
                 <h5 className="text-4xl font-semibold text-blue-500">Kenapa Memilih ZMS?</h5>
 
-                <div className="grid grid-cols-3 gap-16">
+                <div className="grid md:grid-cols-3 gap-16">
                     <div className="space-y-2">
                         <div className="flex items-center space-x-4">
                             <div className="p-2 rounded-full bg-gradient-to-tl from-blue-500 to-blue-300 text-white">
@@ -146,10 +146,10 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="flex flex-col items-center p-16 space-y-16 rounded-b-[4rem] border-b-[12px] border-b-blue-100 bg-white">
+            <section className="flex flex-col items-center p-8 md:p-16 space-y-16 rounded-b-[4rem] border-b-[12px] border-b-blue-100 bg-white">
                 <h5 className="text-4xl text-blue-500 font-semibold">Produk Kami</h5>
 
-                <div className="grid grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-3 gap-8">
                     {productDataList.map((row: ProductDataType) => (
                         <MotionLink key={row.id} variants={productAnimationVariants} href={`/product/${row.slug}`} className="space-y-2">
                             <motion.img variants={productAnimationVariants} whileHover="hover" whileTap="tap" transition={{ type: "spring", visualDuration: .3 }} className="w-full aspect-video rounded-3xl" src={`${process.env.BASE_URL}/${row.cover_image}`} alt={`${row.name} Cover`} />

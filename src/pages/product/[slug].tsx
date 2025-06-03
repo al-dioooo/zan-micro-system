@@ -19,12 +19,12 @@ export default function ProductDetail() {
     }, [router.query.slug])
 
     return (
-        <section className="px-24 pt-36 pb-12">
-            <div className="flex space-x-16">
-                <div className="w-1/2">
+        <section className="px-12 md:px-24 pt-36 pb-12">
+            <div className="flex md:flex-row flex-col space-y-4 md:space-y-0 md:space-x-16">
+                <div className="w-full md:w-1/2">
                     <img className="rounded-3xl" src={`${process.env.BASE_URL}/${productData?.cover_image}`} alt={`${productData?.name} Cover`} />
                 </div>
-                <div className="space-y-8 w-1/2">
+                <div className="space-y-4 md:space-y-8 w-full md:w-1/2">
                     <div className="space-y-2">
                         <h1 className="text-3xl font-semibold">{productData?.name}</h1>
                         <h2 className="max-w-md w-full text-gray-700">{productData?.description}</h2>

@@ -4,7 +4,7 @@ import { Clock, Mail, MapPin, Phone } from "@/components/icons/outline"
 export default function Contact() {
     return (
         <>
-            <section className="px-24 pt-36 pb-12 relative bg-white">
+            <section className="px-12 md:px-24 pt-36 pb-12 relative bg-white">
                 <div className="space-y-2">
                     <h1 className="text-3xl font-semibold">Say Hi!</h1>
                     <h2 className="max-w-md w-full text-gray-700">Feel free to reach us.</h2>
@@ -16,8 +16,8 @@ export default function Contact() {
                 </div>
             </section>
 
-            <section className="px-24 py-16 flex justify-between space-x-24 bg-white rounded-b-[4rem] border-b-[12px] border-b-blue-100">
-                <div className="w-1/3 space-y-8">
+            <section className="px-12 md:px-24 py-16 flex md:flex-row flex-col md:justify-between space-y-12 md:space-y-0 md:space-x-24 bg-white rounded-b-[4rem] border-b-[12px] border-b-blue-100">
+                <div className="w-full md:w-1/3 space-y-8">
                     <div className="flex items-start space-x-4">
                         {/* Location */}
                         <div className="bg-gradient-to-tl from-blue-500 to-blue-300 text-white rounded-2xl p-4">
@@ -68,10 +68,10 @@ export default function Contact() {
                         </div>
                     </div>
                 </div>
-                <div className="space-y-4 w-2/3">
+                <div className="space-y-4 w-full md:w-2/3">
                     <p className="text-xl font-semibold">Lokasi di Maps</p>
                     <div className="overflow-hidden rounded-3xl border-4 border-gray-200">
-                        <iframe src="https://maps.google.com/maps?q=Bekasi&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="300" allowFullScreen={false}></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3966.2282572518743!2d107.05109499999999!3d-6.233612999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwMTQnMDEuMCJTIDEwN8KwMDMnMDMuOSJF!5e0!3m2!1sen!2sid!4v1748925026191!5m2!1sen!2sid" width="100%" height="300" allowFullScreen={false}></iframe>
                     </div>
                 </div>
             </section>

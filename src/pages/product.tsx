@@ -26,7 +26,7 @@ export default function Product() {
 
     return (
         <>
-            <section className="px-24 pt-36 pb-12 relative bg-white">
+            <section className="px-12 md:px-24 pt-36 pb-12 relative bg-white">
                 <div className="space-y-2">
                     <h1 className="text-3xl font-semibold">Product</h1>
                     <h2 className="max-w-md w-full text-gray-700">Berikut daftar produk kami yang dapat meningkatkan produktivitas dan efisiensi bisnis Anda.</h2>
@@ -38,9 +38,9 @@ export default function Product() {
                 </div>
             </section>
 
-            <section className="px-24 py-16 space-y-8 bg-white">
+            <section className="px-12 md:px-24 py-16 space-y-8 bg-white">
                 <h3 className="text-xl font-medium">Produk Umum</h3>
-                <div className="grid grid-cols-3 gap-8">
+                <div className="grid md:grid-cols-3 gap-8">
                     {productDataList.map((row: ProductDataType) => (
                         <MotionLink key={row.id} variants={productAnimationVariants} href={`/product/${row.slug}`} className="space-y-2">
                             <motion.img variants={productAnimationVariants} whileHover="hover" whileTap="tap" transition={{ type: "spring", visualDuration: .3 }} className="w-full aspect-video rounded-3xl" src={`${process.env.BASE_URL}/${row.cover_image}`} alt={`${row.name} Cover`} />
@@ -53,16 +53,16 @@ export default function Product() {
                 </div>
             </section>
 
-            <section className="px-24 py-16 bg-white">
+            <section className="px-12 md:px-24 py-16 bg-white">
                 <div className="text-4xl font-medium">
                     <WavyText />
                 </div>
             </section>
 
-            <section className="bg-white rounded-b-[4rem] border-b-[12px] border-b-blue-100 p-24">
-                <div className="p-24 border border-dashed border-gray-300 rounded-[4rem] aspect-cinema flex items-center justify-center">
-                    <div className="bg-gradient-to-tl from-blue-500 to-blue-300 text-white rounded-3xl px-24 py-8">
-                        <p className="text-4xl font-medium">Pesan Sekarang</p>
+            <section className="bg-white rounded-b-[4rem] border-b-[12px] border-b-blue-100 p-12 md:p-24">
+                <div className="p-12 md:p-24 border border-dashed border-gray-300 rounded-4xl md:rounded-[4rem] aspect-cinema flex items-center justify-center">
+                    <div className="bg-gradient-to-tl from-blue-500 to-blue-300 text-white rounded-3xl px-8 md:px-24 py-8">
+                        <p className="text-lg md:text-4xl font-medium">Pesan Sekarang</p>
                     </div>
                 </div>
             </section>
