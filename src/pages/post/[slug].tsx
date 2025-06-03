@@ -52,7 +52,7 @@ export default function PostDetail() {
 
                     <div className="w-fit md:w-1/3">
                         <div className="flex items-center space-x-4">
-                            <button onClick={() => copyCurrentUrl()} className="inline-flex z-10 space-x-2 font-medium bg-gradient-to-tl from-blue-500 to-blue-300 hover:bg-blue-500 hover:active:bg-blue-300 transition px-6 py-2 rounded-full text-white items-center pointer-events-auto">
+                            <button onClick={() => copyCurrentUrl()} className="inline-flex z-10 space-x-2 font-medium bg-gradient-to-tl from-blue-500 to-blue-300 hover:to-blue-500 hover:active:from-blue-300 cursor-pointer transition px-6 py-2 rounded-full text-white items-center pointer-events-auto">
                                 <Link />
                                 <span>Copy Link</span>
                             </button>

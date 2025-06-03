@@ -1,14 +1,16 @@
-import { Topography } from "@/components/graphics/decoration"
+import { CircleDecoration, Topography } from "@/components/graphics/decoration"
 import ZMSGraphic from "@/components/graphics/zms"
 import { FourPointedStar } from "@/components/icons/filled"
 import { ArrowNarrowDown, LayersIntersect, Sparkles, Star } from "@/components/icons/outline"
 import AxiosInstance from "@/helpers/axiosInstance"
 import { ProductDataType } from "@/helpers/types"
-import { motion } from "motion/react"
+import { motion, useScroll } from "motion/react"
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
 import homeData from "@/temp-data/home.json"
+import useDimension from "@/hooks/dimension"
+import StarSpinner from "@/components/star-spinner"
 
 const productAnimationVariants = {
     hover: {
@@ -22,6 +24,19 @@ const productAnimationVariants = {
 const MotionLink = motion(Link)
 
 export default function Home() {
+    // Scroll container refs
+    const ourProductContainerRef = useRef(null)
+
+    // Window dimension hooks
+    const { height } = useDimension()
+
+    // Scroll Listeners
+    const { scrollYProgress: scrollYProgressOnOurProduct } = useScroll({
+        target: ourProductContainerRef,
+        offset: ['start start', 'end start']
+    })
+
+    // States
     const [productDataList, setProductDataList] = useState([])
 
     useEffect(() => {
@@ -146,7 +161,15 @@ export default function Home() {
                 </div>
             </section>
 
-            <section className="flex flex-col items-center p-8 md:p-16 space-y-16 rounded-b-[4rem] border-b-[12px] border-b-blue-100 bg-white">
+            <section className="flex justify-center w-full bg-white">
+                {/* Just decoration */}
+                <div className="flex items-center justify-center relative">
+                    <StarSpinner className="w-20 h-20 z-[2] relative text-blue-500" baseVelocity={8} />
+                    <span className="absolute z-[1] inset-0 flex justify-center items-center"><CircleDecoration className="scale-150 text-indigo-300 -rotate-[9deg]" strokeWidth={2} /> </span>
+                </div>
+            </section>
+
+            <section ref={ourProductContainerRef} className="flex flex-col items-center p-8 md:p-16 space-y-16 rounded-b-[4rem] border-b-[12px] border-b-blue-100 bg-white">
                 <h5 className="text-4xl text-blue-500 font-semibold">Produk Kami</h5>
 
                 <div className="grid md:grid-cols-3 gap-8">
