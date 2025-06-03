@@ -4,16 +4,16 @@ export type ProductDataType = {
     slug: string
     description: string
     price: number
-    additionalPrice?: number
-    paymentType: string
-    coverImage: string
-    createdAt: string
-    updatedAt?: string
+    additional_price?: number
+    payment_type: string
+    cover_image: string
+    created_at: string
+    updated_at?: string
 
-    productFeatures?: {
+    product_features?: {
         id: number
-        productId: number
-        feature: string
+        product_id: number
+        name: string
     }[]
 }
 
@@ -23,6 +23,6 @@ export type PostDataType = {
     slug: string
     description?: string
     content: string
-    createdAt: string
-    updatedAt?: string
+    created_at: string
+    updated_at?: string
 }

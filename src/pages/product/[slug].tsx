@@ -12,7 +12,7 @@ export default function ProductDetail() {
 
     useEffect(() => {
         if (router.query.slug) {
-            AxiosInstance.get(`/api/product/${router.query.slug}`)
+            AxiosInstance.get(`${process.env.API_URL}/api/product/${router.query.slug}`)
                 .then((response) => setProductData(response.data))
                 .catch((error) => console.error("Error fetching product data:", error))
         }
@@ -22,7 +22,7 @@ export default function ProductDetail() {
         <section className="px-24 pt-36 pb-12">
             <div className="flex space-x-16">
                 <div className="w-1/2">
-                    <img className="rounded-3xl" src={`/${productData?.coverImage}`} alt={`${productData?.name} Cover`} />
+                    <img className="rounded-3xl" src={`${process.env.BASE_URL}/${productData?.cover_image}`} alt={`${productData?.name} Cover`} />
                 </div>
                 <div className="space-y-8 w-1/2">
                     <div className="space-y-2">
@@ -30,19 +30,18 @@ export default function ProductDetail() {
                         <h2 className="max-w-md w-full text-gray-700">{productData?.description}</h2>
                     </div>
 
-                    {productData?.additionalPrice ? (
-                        <p className="text-blue-500 font-semibold text-2xl">Rp{formatRupiah(productData?.price)}-{formatRupiah(productData?.additionalPrice)}K<span className="text-sm text-gray-500">{productData?.paymentType == 'subscription' ? '/month' : ''}</span></p>
+                    {productData?.additional_price ? (
+                        <p className="text-blue-500 font-semibold text-2xl">Rp{formatRupiah(productData?.price)}-{formatRupiah(productData?.additional_price)}K<span className="text-sm text-gray-500">{productData?.payment_type == 'subscription' ? '/month' : ''}</span></p>
                     ) : (
-                        // @ts-ignore
-                        <p className="text-blue-500 font-semibold text-2xl">Rp{formatRupiah(productData?.price)}K<span className="text-sm text-gray-500">{productData?.paymentType == 'subscription' ? '/month' : ''}</span></p>
+                        <p className="text-blue-500 font-semibold text-2xl">Rp{formatRupiah(productData?.price ?? 0)}K<span className="text-sm text-gray-500">{productData?.payment_type == 'subscription' ? '/month' : ''}</span></p>
                     )}
 
                     <div>
                         <p className="text-lg font-medium">Features</p>
                         <ul>
-                            {productData?.productFeatures?.map((feature) => (
+                            {productData?.product_features?.map((feature) => (
                                 <li key={feature.id} className="text-gray-700">
-                                    {feature.feature}
+                                    {feature.name}
                                 </li>
                             ))}
                         </ul>

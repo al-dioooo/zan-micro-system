@@ -23,7 +23,7 @@ export default function Home() {
     const [productDataList, setProductDataList] = useState([])
 
     useEffect(() => {
-        AxiosInstance.get("/api/product").then((response) => setProductDataList(response.data)).catch((error) => console.log(error))
+        AxiosInstance.get(`${process.env.API_URL}/api/product`).then((response) => setProductDataList(response.data)).catch((error) => console.log(error))
     }, [])
 
     return (
@@ -45,7 +45,7 @@ export default function Home() {
                         </h2>
 
                         <div className="mt-16 relative w-fit z-[1]">
-                            <a href="/" className="font-medium bg-gradient-to-tl from-blue-500 to-blue-300 pl-6 pr-2 py-2 rounded-full text-white inline-flex items-center">Konsultasi<span
+                            <a href="" className="font-medium bg-gradient-to-tl from-blue-500 to-blue-300 pl-6 pr-2 py-2 rounded-full text-white inline-flex items-center">Konsultasi<span
                                 className="bg-white text-blue-500 text-sm px-3 py-1 rounded-full ml-4">Gratis</span></a>
 
                             <div className="absolute pointer-events-none -top-1 -right-1 text-yellow-300">
@@ -151,11 +151,11 @@ export default function Home() {
 
                 <div className="grid grid-cols-3 gap-8">
                     {productDataList.map((row: ProductDataType) => (
-                        <MotionLink variants={productAnimationVariants} href={`/product/${row.slug}`} className="space-y-2">
-                            <motion.img variants={productAnimationVariants} whileHover="hover" whileTap="tap" transition={{ type: "spring", visualDuration: .3 }} className="w-full aspect-video rounded-3xl" src={`/${row.coverImage}`} alt={`${row.name} Cover`} />
+                        <MotionLink key={row.id} variants={productAnimationVariants} href={`/product/${row.slug}`} className="space-y-2">
+                            <motion.img variants={productAnimationVariants} whileHover="hover" whileTap="tap" transition={{ type: "spring", visualDuration: .3 }} className="w-full aspect-video rounded-3xl" src={`${process.env.BASE_URL}/${row.cover_image}`} alt={`${row.name} Cover`} />
                             <div className="px-6 flex items-center justify-between">
                                 <p className="font-medium">{row.name}</p>
-                                <p className="font-medium text-gray-500 capitalize">{row.paymentType.replace('-', ' ')}</p>
+                                <p className="font-medium text-gray-500 capitalize">{row.payment_type.replace('-', ' ')}</p>
                             </div>
                         </MotionLink>
                     ))}

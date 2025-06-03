@@ -37,7 +37,7 @@ export default function Contact() {
                         <div className="space-y-2">
                             <p className="text-lg font-medium">Jam Kantor</p>
                             <div>
-                                <p className="text-gray-500">Senin - Jum'at: 08.00-17.00 WIB</p>
+                                <p className="text-gray-500">Senin - Jum&apos;at: 08.00-17.00 WIB</p>
                                 <p className="text-gray-500">Sabtu - Minggu: 08.00-11.00 WIB</p>
                             </div>
                         </div>

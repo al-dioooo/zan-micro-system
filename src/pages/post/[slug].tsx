@@ -3,7 +3,6 @@ import { PostDataType } from "@/helpers/types"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 
-import { formatRupiah } from "@/helpers/number"
 import { formatDate } from "@/helpers/date"
 import { Link } from "@/components/icons/outline"
 
@@ -14,7 +13,7 @@ export default function PostDetail() {
 
     useEffect(() => {
         if (router.query.slug) {
-            AxiosInstance.get(`/api/post/${router.query.slug}`)
+            AxiosInstance.get(`${process.env.API_URL}/api/post/${router.query.slug}`)
                 .then((response) => setPostData(response.data))
                 .catch((error) => console.error("Error fetching post data:", error))
         }
@@ -25,7 +24,7 @@ export default function PostDetail() {
             <div className="space-y-16">
                 <div className="space-y-8 w-1/2">
                     <div className="space-y-2">
-                        <p>{postData ? formatDate(postData.createdAt) : ""}</p>
+                        <p>{postData ? formatDate(postData.created_at) : ""}</p>
                         <h1 className="bg-clip-text bg-gradient-to-br from-blue-500 to-blue-300 text-transparent text-3xl font-semibold">{postData?.title}</h1>
                         <h2 className="max-w-md w-full text-gray-700">{postData?.description}</h2>
                     </div>
@@ -46,7 +45,7 @@ export default function PostDetail() {
 
                     <div className="w-1/3">
                         <div className="flex items-center space-x-4">
-                            <a href="/" className="inline-flex space-x-2 font-medium bg-gradient-to-tl from-blue-500 to-blue-300 px-6 py-2 rounded-full text-white items-center">
+                            <a href="" className="inline-flex space-x-2 font-medium bg-gradient-to-tl from-blue-500 to-blue-300 px-6 py-2 rounded-full text-white items-center">
                                 <Link />
                                 <span>Copy Link</span>
                             </a>

@@ -22,7 +22,7 @@ export default function Blog() {
     const [postDataList, setPostDataList] = useState([])
 
     useEffect(() => {
-        AxiosInstance.get("/api/post").then((response) => setPostDataList(response.data)).catch((error) => console.log(error))
+        AxiosInstance.get(`${process.env.API_URL}/api/post`).then((response) => setPostDataList(response.data)).catch((error) => console.log(error))
     }, [])
 
     return (
@@ -41,12 +41,12 @@ export default function Blog() {
             <section className="px-24 py-16 bg-white rounded-b-[4rem] border-b-[12px] border-b-blue-100">
                 <div className="grid grid-cols-3 gap-8">
                     {postDataList.map((row: PostDataType) => (
-                        <MotionLink variants={postAnimationVariants} href={`/post/${row.slug}`} className="space-y-4 border border-gray-200 p-8 rounded-3xl">
+                        <MotionLink key={row.id} variants={postAnimationVariants} href={`/post/${row.slug}`} className="space-y-4 border border-gray-200 p-8 rounded-3xl">
                             <div className="flex items-center justify-between">
                                 <div className="w-fit p-2 rounded-full border border-gray-200 bg-gradient-to-tl from-gray-300 to-gray-100">
                                     <Book strokeWidth={1.5} className="w-6 h-6" />
                                 </div>
-                                <p className="text-sm text-gray-500">{formatDate(row.createdAt)}</p>
+                                <p className="text-sm text-gray-500">{formatDate(row.created_at)}</p>
                             </div>
                             <div>
                                 <p className="font-medium text-lg">{row.title}</p>

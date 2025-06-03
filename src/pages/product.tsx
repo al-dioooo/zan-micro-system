@@ -21,7 +21,7 @@ export default function Product() {
     const [productDataList, setProductDataList] = useState([])
 
     useEffect(() => {
-        AxiosInstance.get("/api/product").then((response) => setProductDataList(response.data)).catch((error) => console.log(error))
+        AxiosInstance.get(`${process.env.API_URL}/api/product`).then((response) => setProductDataList(response.data)).catch((error) => console.log(error))
     }, [])
 
     return (
@@ -42,11 +42,11 @@ export default function Product() {
                 <h3 className="text-xl font-medium">Produk Umum</h3>
                 <div className="grid grid-cols-3 gap-8">
                     {productDataList.map((row: ProductDataType) => (
-                        <MotionLink variants={productAnimationVariants} href={`/product/${row.slug}`} className="space-y-2">
-                            <motion.img variants={productAnimationVariants} whileHover="hover" whileTap="tap" transition={{ type: "spring", visualDuration: .3 }} className="w-full aspect-video rounded-3xl" src={`/${row.coverImage}`} alt={`${row.name} Cover`} />
+                        <MotionLink key={row.id} variants={productAnimationVariants} href={`/product/${row.slug}`} className="space-y-2">
+                            <motion.img variants={productAnimationVariants} whileHover="hover" whileTap="tap" transition={{ type: "spring", visualDuration: .3 }} className="w-full aspect-video rounded-3xl" src={`${process.env.BASE_URL}/${row.cover_image}`} alt={`${row.name} Cover`} />
                             <div className="px-6 flex items-center justify-between">
                                 <p className="font-medium">{row.name}</p>
-                                <p className="font-medium text-gray-500 capitalize">{row.paymentType.replace('-', ' ')}</p>
+                                <p className="font-medium text-gray-500 capitalize">{row.payment_type.replace('-', ' ')}</p>
                             </div>
                         </MotionLink>
                     ))}

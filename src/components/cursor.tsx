@@ -27,8 +27,8 @@ export default function Cursor() {
     const manageMouseMove = (e: MouseEvent) => {
         const { clientX, clientY, target } = e
 
-        // @ts-ignore
-        setIsPointer(window.getComputedStyle(target).getPropertyValue("cursor") === "pointer")
+        const element = target as HTMLElement
+        setIsPointer(window.getComputedStyle(element).getPropertyValue("cursor") === "pointer")
 
         mouse.x.set(clientX - cursorSize / 2)
         mouse.y.set(clientY - cursorSize / 2)
