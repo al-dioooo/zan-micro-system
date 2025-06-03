@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="bg-gray-100 px-24 pt-16 pb-36 relative overflow-hidden">
+        <footer className="bg-radial-[at_50%_100%] from-blue-100 via-gray-100 via-60% to-gray-100 px-24 pt-16 pb-36 relative overflow-hidden">
             <div className="flex space-x-8 justify-between">
                 <div className="flex flex-col space-y-24">
                     <div className="space-y-8">
@@ -65,8 +65,8 @@ export default function Footer() {
                 </div>
             </div>
 
-            <div className="absolute inset-0 w-full flex justify-center items-end translate-y-18 whitespace-nowrap">
-                <p className="text-[8rem] font-black text-gray-200">Zan Micro System</p>
+            <div className="absolute pointer-events-none inset-0 w-full flex justify-center items-end translate-y-18 whitespace-nowrap">
+                <p className="text-[8rem] font-black text-gray-50">Zan Micro System</p>
             </div>
         </footer>
     )

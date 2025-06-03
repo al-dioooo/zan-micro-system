@@ -60,6 +60,14 @@ export const LayersIntersect = ({ className, strokeWidth }: { className?: string
 
 export const Star = ({ className, strokeWidth }: { className?: string, strokeWidth?: number }) => {
     return (
-        <svg className={className} xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth ?? 2} strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z" /></svg>
+        <svg className={className} xmlns="http://www.w3.org/2000/svg" width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={strokeWidth ?? 2} strokeLinecap="round" strokeLinejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M17.286 21.09q -1.69 .001 -5.288 -2.615q -3.596 2.617 -5.288 2.616q -2.726 0 -.495 -6.8q -9.389 -6.775 2.135 -6.775h.076q 1.785 -5.516 3.574 -5.516q 1.785 0 3.574 5.516h.076q 11.525 0 2.133 6.774q 2.23 6.802 -.497 6.8" /></svg>
+    )
+}
+
+export const FourPointedStar = ({ className, strokeWidth }: { className?: string, strokeWidth?: number }) => {
+    return (
+        <svg className={className} strokeWidth={strokeWidth ?? 2} stroke="currentColor" xmlns="http://www.w3.org/2000/svg" width={28} height={28} viewBox="0 0 28 28" fill="none">
+            <path d="M14.282 5.084c.257 1.447.544 2.85.848 3.979.152.563.313 1.078.485 1.505.16.394.373.834.678 1.139.305.305.745.519 1.139.678.427.172.942.333 1.506.485 1.128.304 2.53.59 3.978.848.58.103 1.1.197 1.564.282l-1.564.282c-1.447.257-2.85.544-3.979.848-.563.152-1.078.313-1.505.485-.394.16-.834.373-1.139.678-.305.305-.519.745-.678 1.139-.172.427-.333.942-.485 1.506a41.718 41.718 0 0 0-.65 2.905l-.198 1.073c-.103.58-.197 1.1-.282 1.564l-.282-1.564c-.257-1.447-.544-2.85-.848-3.979a13.629 13.629 0 0 0-.485-1.505c-.16-.394-.373-.834-.678-1.139-.305-.305-.745-.519-1.139-.678a13.628 13.628 0 0 0-1.505-.485c-1.129-.304-2.532-.59-3.979-.848-.58-.103-1.1-.197-1.565-.282l1.565-.282c1.447-.257 2.85-.544 3.979-.848a13.628 13.628 0 0 0 1.505-.485c.394-.16.834-.373 1.139-.678.305-.305.519-.745.678-1.139.172-.427.333-.942.485-1.505.304-1.129.59-2.532.848-3.979.103-.58.197-1.1.282-1.565l.282 1.565Z" />
+        </svg>
     )
 }

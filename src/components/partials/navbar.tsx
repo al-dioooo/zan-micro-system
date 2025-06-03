@@ -1,7 +1,10 @@
 import Link from "next/link"
 import NavLink from "../nav-link"
+import { useRouter } from "next/router"
 
 export default function Navbar() {
+    const pathname = useRouter().pathname
+
     return (
         <header className="fixed top-0 w-full z-10">
             <div
@@ -24,7 +27,7 @@ export default function Navbar() {
                     </ul>
                 </nav>
                 <div>
-                    <Link href="/contact" className="border-2 font-medium border-gray-200 rounded-full px-8 py-2 text-sm hover:bg-gradient-to-tl hover:from-blue-500 hover:to-blue-300 hover:text-white hover:border-blue-200 transition cursor-pointer">
+                    <Link href="/contact" className={`${pathname == '/contact' ? 'bg-gradient-to-tl from-blue-500 to-blue-300 text-white border-blue-200': 'border-gray-200 hover:bg-gradient-to-tl hover:from-blue-500 hover:to-blue-300 hover:text-white hover:border-blue-200'} border-2 font-medium rounded-full px-8 py-2 text-sm transition cursor-pointer`}>
                         Get in Touch
                     </Link>
                 </div>

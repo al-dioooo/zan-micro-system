@@ -9,3 +9,8 @@
     --font-sans: "Poppins", sans-serif;
     --aspect-cinema: 21/9;
 }
+
+.mask-radial-gradient {
+    -webkit-mask-image: radial-gradient(100% 100% at 100% 0,#fff,#0000);
+    mask-image: radial-gradient(100% 100% at 100% 0,#fff,#0000);
+}

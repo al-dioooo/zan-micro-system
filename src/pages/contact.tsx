@@ -1,16 +1,22 @@
+import { Topography } from "@/components/graphics/decoration"
 import { Clock, Mail, MapPin, Phone } from "@/components/icons/outline"
 
 export default function Contact() {
     return (
         <>
-            <section className="px-24 pt-36 pb-12">
+            <section className="px-24 pt-36 pb-12 relative bg-white">
                 <div className="space-y-2">
                     <h1 className="text-3xl font-semibold">Say Hi!</h1>
                     <h2 className="max-w-md w-full text-gray-700">Feel free to reach us.</h2>
                 </div>
+
+                {/* Topography Decoration */}
+                <div className="absolute pointer-events-none top-0 inset-x-0">
+                    <Topography className="w-full h-auto text-blue-200 mask-radial-gradient" />
+                </div>
             </section>
 
-            <section className="px-24 py-16 flex justify-between space-x-24">
+            <section className="px-24 py-16 flex justify-between space-x-24 bg-white rounded-b-[4rem] border-b-[12px] border-b-blue-100">
                 <div className="w-1/3 space-y-8">
                     <div className="flex items-start space-x-4">
                         {/* Location */}
