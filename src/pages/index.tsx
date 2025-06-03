@@ -4,12 +4,12 @@ import { FourPointedStar } from "@/components/icons/filled"
 import { ArrowNarrowDown, LayersIntersect, Sparkles, Star } from "@/components/icons/outline"
 import AxiosInstance from "@/helpers/axiosInstance"
 import { ProductDataType } from "@/helpers/types"
-import { motion, useScroll } from "motion/react"
+import { motion } from "motion/react"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 
 import homeData from "@/temp-data/home.json"
-import useDimension from "@/hooks/dimension"
+// import useDimension from "@/hooks/dimension"
 import StarSpinner from "@/components/star-spinner"
 
 const productAnimationVariants = {
@@ -28,13 +28,13 @@ export default function Home() {
     const ourProductContainerRef = useRef(null)
 
     // Window dimension hooks
-    const { height } = useDimension()
+    // const { height } = useDimension()
 
     // Scroll Listeners
-    const { scrollYProgress: scrollYProgressOnOurProduct } = useScroll({
-        target: ourProductContainerRef,
-        offset: ['start start', 'end start']
-    })
+    // const { scrollYProgress: scrollYProgressOnOurProduct } = useScroll({
+    //     target: ourProductContainerRef,
+    //     offset: ['start start', 'end start']
+    // })
 
     // States
     const [productDataList, setProductDataList] = useState([])
