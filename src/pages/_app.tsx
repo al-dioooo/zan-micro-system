@@ -1,5 +1,6 @@
 import Cursor from "@/components/cursor"
 import MainLayout from "@/components/layouts/main-layout"
+import useBreakpoint from "@/hooks/breakpoint"
 import "@/styles/globals.css"
 import type { LenisRef } from "lenis/react"
 import { ReactLenis } from "lenis/react"
@@ -11,6 +12,8 @@ import { useEffect, useRef } from "react"
 export default function App({ Component, pageProps }: AppProps) {
     const router = useRouter()
     const lenisRef = useRef<LenisRef>(null)
+
+    const isMdUp = useBreakpoint(768)
 
     useEffect(() => {
         function update(data: { timestamp: number }) {
@@ -27,7 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
     return (
         <>
             <ReactLenis root options={{ autoRaf: false }} ref={lenisRef} />
-            <Cursor />
+            {isMdUp && <Cursor />}
             <MainLayout>
                 <AnimatePresence mode="wait" initial={false}>
                     <div key={router.pathname}>
