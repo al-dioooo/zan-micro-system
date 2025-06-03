@@ -8,6 +8,8 @@ import { motion } from "motion/react"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 
+import homeData from "@/temp-data/home.json"
+
 const productAnimationVariants = {
     hover: {
         scale: 1.05
@@ -45,7 +47,7 @@ export default function Home() {
                         </h2>
 
                         <div className="mt-16 relative w-fit z-[1]">
-                            <a href="" className="font-medium bg-gradient-to-tl from-blue-500 to-blue-300 pl-6 pr-2 py-2 rounded-full text-white inline-flex items-center">Konsultasi<span
+                            <a href="https://wa.me/6285212482977" target="_blank" className="font-medium bg-gradient-to-tl from-blue-500 to-blue-300 pl-6 pr-2 py-2 rounded-full text-white inline-flex items-center">Konsultasi<span
                                 className="bg-white text-blue-500 text-sm px-3 py-1 rounded-full ml-4">Gratis</span></a>
 
                             <div className="absolute pointer-events-none -top-1 -right-1 text-yellow-300">
@@ -106,11 +108,11 @@ export default function Home() {
                                 <Sparkles strokeWidth={1.5} className="w-8 h-8" />
                             </div>
                             <p className="text-xl font-semibold">
-                                Easy-to-use
+                                {homeData.why[0].title}
                             </p>
                         </div>
                         <p className="text-gray-500 text-justify indent-16">
-                            Kompleksitas pencatatan dan penyusunan laporan keuangan dikemas menjadi sesuatu yang sederhana dan mudah tanpa mengurangi kelengkapan, akurasi, dan keamanan.
+                            {homeData.why[0].description}
                         </p>
                     </div>
 
@@ -120,13 +122,11 @@ export default function Home() {
                                 <LayersIntersect strokeWidth={1.5} className="w-8 h-8" />
                             </div>
                             <p className="text-xl font-semibold">
-                                Flexible
+                                {homeData.why[1].title}
                             </p>
                         </div>
                         <p className="text-gray-500 text-justify indent-16">
-                            Sistem kami dirancang untuk dapat diterapkan dalam berbagai jenis dan bentuk usaha, serta berbagai skala bisnis.
-
-                            Serta dapat menangani data lintas cabang, lintas perusahaan dan lintas periode.
+                            {homeData.why[1].description}
                         </p>
                     </div>
 
@@ -136,11 +136,11 @@ export default function Home() {
                                 <Star strokeWidth={1.5} className="w-8 h-8" />
                             </div>
                             <p className="text-xl font-semibold">
-                                Reliable
+                                {homeData.why[2].title}
                             </p>
                         </div>
                         <p className="text-gray-500 text-justify indent-16">
-                            Aplikasi kami menggunakan sistem database modern yang handal dengan skalabilitas serta konkurensi tinggi yang dapat menjamin konsistensi dan integritas data secara handal dan terpercaya.
+                            {homeData.why[2].description}
                         </p>
                     </div>
                 </div>

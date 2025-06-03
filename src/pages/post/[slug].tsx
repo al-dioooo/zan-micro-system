@@ -37,13 +37,16 @@ export default function PostDetail() {
                 <div className="flex md:flex-row flex-col justify-between space-y-8 md:space-y-0 md:gap-16">
                     <div className="space-y-4 w-full md:w-2/3">
                         <p className="text-justify">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, numquam animi quam, necessitatibus natus quo non corporis corrupti sunt doloremque fuga! Earum cum nesciunt ipsam fugiat nostrum, alias rem sit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda repellendus quos excepturi inventore amet cumque error harum reiciendis veritatis sapiente recusandae modi nulla optio, omnis quis saepe reprehenderit nesciunt perspiciatis.
+                            Dalam era digital yang terus berkembang, kebutuhan akan sistem yang cepat, efisien, dan terintegrasi menjadi hal yang sangat penting. Zan Micro System hadir sebagai solusi teknologi modern yang dirancang untuk membantu bisnis dalam mengelola berbagai aspek operasional secara lebih optimal.
                         </p>
                         <p className="text-justify">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, numquam animi quam, necessitatibus natus quo non corporis corrupti sunt doloremque fuga! Earum cum nesciunt ipsam fugiat nostrum, alias rem sit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda repellendus quos excepturi inventore amet cumque error harum reiciendis veritatis sapiente recusandae modi nulla optio, omnis quis saepe reprehenderit nesciunt perspiciatis.
+                            Zan Micro System tidak hanya berfokus pada penyediaan layanan, tetapi juga pada pengalaman pengguna (user experience) yang intuitif dan mudah digunakan. Mulai dari tampilan halaman depan, katalog produk, hingga formulir kontak, setiap elemen dirancang untuk memastikan kenyamanan pengguna dalam mengakses informasi
                         </p>
                         <p className="text-justify">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, numquam animi quam, necessitatibus natus quo non corporis corrupti sunt doloremque fuga! Earum cum nesciunt ipsam fugiat nostrum, alias rem sit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Assumenda repellendus quos excepturi inventore amet cumque error harum reiciendis veritatis sapiente recusandae modi nulla optio, omnis quis saepe reprehenderit nesciunt perspiciatis.
+                            Website ini juga berperan sebagai media informasi dan promosi, sehingga pelanggan dapat lebih mengenal layanan dan keunggulan yang ditawarkan Zan Micro System. Dengan desain yang responsif dan estetis, website ini diharapkan mampu meningkatkan kepercayaan dan ketertarikan pengguna terhadap produk maupun layanan yang tersedia.
+                        </p>
+                        <p className="text-justify">
+                            Melalui platform ini, Zan Micro System berkomitmen untuk terus berkembang dan menyediakan solusi terbaik di bidang teknologi, seiring dengan kebutuhan dunia bisnis yang dinamis.
                         </p>
                     </div>
 
